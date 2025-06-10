@@ -1,8 +1,4 @@
 import peewee as pw
-import pymysql
-pymysql.install_as_MySQLdb()
-
-import peewee as pw
 
 farmacia_ujat = pw.PostgresqlDatabase(
     'neondb',
