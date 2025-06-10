@@ -1,8 +1,13 @@
 import flet as ft
 import modelo as md
+import main as ma
 
 def main(page: ft.Page):
     # Función para guardar el medicamento
+    def regresar(e: ft.ControlEvent):
+        page.clean()
+        ma.main(page)
+        
     def guardar_medicamento(e: ft.ControlEvent):
         clave = txt_clave.value.strip()
         nombre = txt_descripcion.value.strip()
@@ -114,12 +119,13 @@ def main(page: ft.Page):
     )
 
     btn_cancelar = ft.ElevatedButton(
-        text="Cancelar",
+        text="Regresar",
         icon='close',
         icon_color="white",
         bgcolor='red',
         color='white',
         width=150,
+        on_click=regresar
         # Puedes agregar on_click para cerrar o limpiar
     )
 
